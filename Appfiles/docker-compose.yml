@@ -1,0 +1,15 @@
+
+version: "3.9"
+services:
+  pythonprovider:
+    image: samuelmata/pythonprovider:latest
+    ports:
+      - 3000:3000
+  nodeconsumer:
+    image: samuelmata/nodeconsumer:latest
+    ports:
+      - 5000:5000
+    depends_on:
+      - pythonprovider
+    
+    
